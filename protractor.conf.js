@@ -3,13 +3,19 @@
 
 const { SpecReporter } = require('jasmine-spec-reporter');
 
+const chromeOptions = {};
+if (process.env.HEADLESS) {
+  chromeOptions.args = [ "--headless", "--window-size=800x600" ];
+}
+
 exports.config = {
   allScriptsTimeout: 11000,
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome'
+    browserName: 'chrome',
+    chromeOptions: chromeOptions
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',

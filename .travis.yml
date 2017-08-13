@@ -1,0 +1,15 @@
+addons:
+  chrome: stable
+
+language: node_js
+
+script:
+  - npm run build:prod
+  - npm run lint
+  - npm run test:single
+  - npm run e2e
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change
