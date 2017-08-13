@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Markus-Ende/markusende.de.svg?branch=master)](https://travis-ci.org/Markus-Ende/markusende.de)
+
 # Markusende.de
 
 My personal homepage. Created with Angular, because I intend to add more content. Let's see what happens ;-)
