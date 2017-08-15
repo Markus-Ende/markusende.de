@@ -1,0 +1,10 @@
+
+@mixin font__headline {
+  font-family: 'Open Sans Light', monospace;
+  font-weight: normal;
+}
+
+@mixin font__text {
+  font-family: 'Martel Light', cursive;
+  line-height: 150%;
+}

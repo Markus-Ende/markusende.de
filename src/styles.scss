@@ -1,13 +1,87 @@
 /* You can add global styles to this file, and also import other style files */
-html,
-body {
-  height: 100%;
+/*@import 'scss/colors';
+@import 'scss/fonts';
+
+@font-face {
+  font-family: "Open Sans Light";
+  src: url("assets/fonts/OpenSans/OpenSans-Light.ttf");
 }
 
-body {
-  margin: 0;
+@font-face {
+  font-family: "Martel Light";
+  src: url("assets/fonts/Martel/Martel-Light.ttf");
 }
 
 * {
   box-sizing: border-box;
 }
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  $background-gradient: linear-gradient(160deg, darken($color__bg, 10%), $color__bg 70%);
+  background-image: $background-gradient;
+  background-repeat: no-repeat;
+  background-color: $color__bg;
+}
+
+.header {
+  position: relative;
+  overflow: hidden;
+  min-height: 50px;
+}
+
+.mainmenu {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mainmenu__item {
+  @include font__text;
+  font-size: 12px;
+}
+
+.link {
+  text-decoration: none;
+  color: $color__fg--secondary;
+}
+
+.headline {
+  @include font__headline;
+  font-size: 20px;
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-left: 12px;
+
+  &:before {
+    content: '';
+    display: block;
+    $width: 10px;
+    position: absolute;
+    left: -$width - 10px;
+    background-color: $color__highlight;
+    opacity: 1;
+    height: 100%;
+    width: $width;
+  }
+}
+
+.content {
+  @include font__text;
+  font-size: 12px;
+  position: relative;
+  color: $color__fg;
+  overflow: auto;
+  margin: 0 12px;
+}
+*/

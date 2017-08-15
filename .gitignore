@@ -1,6 +1,8 @@
-travis.log
+# transpiled blog sources
+src/app/blog/data/blog.json
 
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# TravisCI temp files
+travis.log
 
 # compiled output
 /dist
