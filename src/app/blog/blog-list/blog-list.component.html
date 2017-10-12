@@ -1,3 +1,4 @@
 <nav>
-  <a *ngFor="let item of blogEntryListItems" [routerLink]="'/blog-entry/' + item.link" routerLinkActive="active">{{item.title}}</a>
+  <a *ngFor="let item of blogEntryListItems" [routerLink]="item.routerLink" routerLinkActive="active">{{item.title}}</a>
 </nav>
+<router-outlet></router-outlet>

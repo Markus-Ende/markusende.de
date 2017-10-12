@@ -1,36 +1,34 @@
-import { BlogEntryDataComponent } from './data/blog-entry-data.component';
-import { ActivatedRoute } from '@angular/router';
+import { BlogDataService } from './blog-data/blog-data.service';
+import { BlogDataComponent } from './blog-data/blog-data.component';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { convertToParamMap } from '@angular/router';
 import { BlogEntryComponent } from './blog-entry.component';
-import { BlogService } from './blog.service';
 import { Observable } from 'rxjs/Observable';
+import { mock, instance, when } from 'ts-mockito';
 
 describe('BlogEntryComponent', () => {
 
-  it('should be creatable', () => {
+  it('should be creatable via DI', () => {
     TestBed.configureTestingModule({
-      declarations: [BlogEntryComponent, BlogEntryDataComponent],
-      providers: [{ provide: BlogService, useValue: {} },
-      {
-        provide: ActivatedRoute, useValue: {
-          params: Observable.of({ id: 'test' })
-        }
-      }]
+      declarations: [BlogEntryComponent, BlogDataComponent],
+      providers: [
+        { provide: BlogDataService, useValue: {} },
+        { provide: ActivatedRoute, useValue: {} }
+      ]
     });
     expect(TestBed.createComponent(BlogEntryComponent).componentInstance).toBeTruthy();
   });
 
-  it('should bind ', () => {
-    TestBed.configureTestingModule({
-      declarations: [BlogEntryComponent, BlogEntryDataComponent],
-      providers: [{ provide: BlogService, useValue: {} },
-      {
-        provide: ActivatedRoute, useValue: {
-          params: Observable.of({ id: 'test' })
-        }
-      }]
+  describe('ngOnInit', () => {
+    it('should set blogEntryId according to id param', () => {
+      const activatedRouteMock = mock(ActivatedRoute);
+      when(activatedRouteMock.paramMap).thenReturn(Observable.of(convertToParamMap({id: 'test' })));
+      const blogEntryComponent = new BlogEntryComponent(instance(mock(BlogDataService)), instance(activatedRouteMock));
+      blogEntryComponent.ngOnInit();
+      expect(blogEntryComponent.blogEntryId).toBe('test');
     });
-    expect(TestBed.createComponent(BlogEntryComponent).componentInstance).toBeTruthy();
+
   });
 
 });

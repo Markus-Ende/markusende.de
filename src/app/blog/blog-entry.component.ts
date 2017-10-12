@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { BlogService } from './blog.service';
+import { BlogDataService } from './blog-data';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 const nullBlogEntryMetadata: BlogEntryMetadata = {
@@ -15,18 +15,17 @@ const nullBlogEntryMetadata: BlogEntryMetadata = {
 @Component({
   selector: 'me-blog-entry',
   templateUrl: './blog-entry.component.html',
-  styleUrls: ['./blog-entry.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./blog-entry.component.scss']
 })
 export class BlogEntryComponent implements OnInit {
   private id: string | null;
-  private readonly blogEntryDataSubject = new BehaviorSubject<BlogEntryMetadata>(nullBlogEntryMetadata);
-  public readonly blogEntryData$ = this.blogEntryDataSubject.asObservable();
+  private readonly blogEntryData$$ = new BehaviorSubject<BlogEntryMetadata>(nullBlogEntryMetadata);
+  public readonly blogEntryData$ = this.blogEntryData$$.asObservable();
   public get blogEntryId(): string | null {
     return this.id;
   }
 
-  constructor(private blogService: BlogService, private route: ActivatedRoute) { }
+  constructor(private blogService: BlogDataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     const idParamToBlogEntryDataOrNull = (params: ParamMap) => {
@@ -37,7 +36,6 @@ export class BlogEntryComponent implements OnInit {
         try {
           blogEntryData = this.blogService.getBlogEntryData(blogEntryId);
         } catch (e) {
-          console.error('Could not retrieve blog data: ', e);
         }
       }
       return blogEntryData;
@@ -46,9 +44,8 @@ export class BlogEntryComponent implements OnInit {
     this.route.paramMap
       .map(idParamToBlogEntryDataOrNull)
       .subscribe((blogEntryData: BlogEntryMetadata | null) =>
-        this.blogEntryDataSubject.next(blogEntryData === null ? nullBlogEntryMetadata : blogEntryData)
+        this.blogEntryData$$.next(blogEntryData === null ? nullBlogEntryMetadata : blogEntryData)
       );
   }
-
 
 }

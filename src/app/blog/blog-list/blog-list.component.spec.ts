@@ -1,5 +1,5 @@
 import { RouterTestingModule } from '@angular/router/testing';
-import { BlogService } from './../blog.service';
+import { BlogDataService } from '../blog-data';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BlogListComponent } from './blog-list.component';
@@ -10,7 +10,7 @@ describe('BlogListComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       declarations: [BlogListComponent],
-      providers: [{ provide: BlogService, useValue: {} }]
+      providers: [{ provide: BlogDataService, useValue: {} }]
     });
     expect(TestBed.createComponent(BlogListComponent).componentInstance).toBeTruthy();
   });

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BlogService } from './blog/blog.service';
 
 @Component({
   selector: 'me-root',

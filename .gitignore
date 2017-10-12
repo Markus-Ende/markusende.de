@@ -1,5 +1,6 @@
 # transpiled blog sources
-src/app/blog/data/blog.json
+src/app/blog/blog-data/generated/*
+!src/app/blog/blog-data/generated/README.md
 
 # TravisCI temp files
 travis.log
