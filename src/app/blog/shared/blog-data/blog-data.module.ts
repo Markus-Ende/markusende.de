@@ -1,5 +1,5 @@
 import { BlogDataService } from './blog-data.service';
-import { IBlogDataService } from './blog-data.service.interface';
+import { BlogDataServiceImpl } from './blog-data.service.impl';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BlogDataComponent } from './blog-data.component';
@@ -12,8 +12,7 @@ import blogData from './generated/blog-metadata.generated.json';
   ],
   declarations: [BlogDataComponent],
   providers: [
-    // { provide: IBlogDataService, useClass: BlogDataService },
-    BlogDataService,
+    { provide: BlogDataService, useClass: BlogDataServiceImpl },
     { provide: BLOG_DATA, useValue: blogData }],
   exports: [BlogDataComponent]
 })

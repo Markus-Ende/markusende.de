@@ -1,5 +1,5 @@
-import { BlogDataService } from './blog-data/blog-data.service';
-import { BlogDataComponent } from './blog-data/blog-data.component';
+import { BlogService } from './shared';
+import { BlogDataComponent } from './shared/blog-data/blog-data.component';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { convertToParamMap } from '@angular/router';
@@ -13,7 +13,7 @@ describe('BlogEntryComponent', () => {
     TestBed.configureTestingModule({
       declarations: [BlogEntryComponent, BlogDataComponent],
       providers: [
-        { provide: BlogDataService, useValue: {} },
+        { provide: BlogService, useValue: {} },
         { provide: ActivatedRoute, useValue: {} }
       ]
     });
@@ -24,7 +24,7 @@ describe('BlogEntryComponent', () => {
     it('should set blogEntryId according to id param', () => {
       const activatedRouteMock = mock(ActivatedRoute);
       when(activatedRouteMock.paramMap).thenReturn(Observable.of(convertToParamMap({id: 'test' })));
-      const blogEntryComponent = new BlogEntryComponent(instance(mock(BlogDataService)), instance(activatedRouteMock));
+      const blogEntryComponent = new BlogEntryComponent(instance(mock(BlogService)), instance(activatedRouteMock));
       blogEntryComponent.ngOnInit();
       expect(blogEntryComponent.blogEntryId).toBe('test');
     });
