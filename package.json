@@ -22,7 +22,7 @@
     "transpile-blog:single": "node src-blog/transpile-blog.js src-blog src/app/blog/blog-data/generated",
     "postinstall": "npm run transpile-blog:single",
     "prestart": "npm run transpile-blog:single",
-    "clean": "rm -rf node_modules && rm -rf dist && rm -rf coverage && rm -rf src/app/blog/blog-data/generated"
+    "clean": "rm -rf dist coverage 'src/app/blog/blog-data/generated/!(folder-info.md)' node_modules"
   },
   "private": true,
   "dependencies": {
