@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { BlogDataService } from './blog-data';
+import { BlogService } from './shared';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 const nullBlogEntryMetadata: BlogEntryMetadata = {
@@ -25,7 +25,7 @@ export class BlogEntryComponent implements OnInit {
     return this.id;
   }
 
-  constructor(private blogService: BlogDataService, private route: ActivatedRoute) { }
+  constructor(private blogService: BlogService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     const idParamToBlogEntryDataOrNull = (params: ParamMap) => {

@@ -4,10 +4,16 @@
   "license": "MIT",
   "author": "Markus Ende",
   "scripts": {
-    "ng": "ng",
+    "postinstall": "npm run transpile-blog:single",
+    "prestart": "npm run transpile-blog:single",
+    "reinstall-latest": "npm run clean && rimraf package-lock.json node_modules && npm install",
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --prod --aot",
+    "clean": "rimraf $npm_package_config_transpileblog_out/'!(folder-info.md)' dist coverage",
+    "lint": "ng lint",
+    "transpile-blog": "nodemon -e js,md --watch src-blog src-blog/transpile-blog.js src-blog $npm_package_config_transpileblog_out",
+    "transpile-blog:single": "node src-blog/transpile-blog.js src-blog $npm_package_config_transpileblog_out",
     "test": "npm run test-blog-transpile:single && npm run test-app:headless",
     "test:single": "npm run test-blog-transpile:single && npm run test-app:single",
     "test-app": "ng test",
@@ -15,14 +21,11 @@
     "test-app:single": "ng test --watch false",
     "test-blog-transpile": "nodemon --watch src-blog --exec 'tape' src-blog/**/*.spec.js",
     "test-blog-transpile:single": "tape src-blog/**/*.spec.js",
-    "lint": "ng lint",
     "test-app-e2e": "ng e2e",
-    "test-app-e2e:headless": "cross-env HEADLESS=true npm run e2e",
-    "transpile-blog": "nodemon -e js,md --watch src-blog src-blog/transpile-blog.js src-blog src/app/blog/blog-data/generated",
-    "transpile-blog:single": "node src-blog/transpile-blog.js src-blog src/app/blog/blog-data/generated",
-    "postinstall": "npm run transpile-blog:single",
-    "prestart": "npm run transpile-blog:single",
-    "clean": "rm -rf dist coverage 'src/app/blog/blog-data/generated/!(folder-info.md)' node_modules"
+    "test-app-e2e:headless": "cross-env HEADLESS=true npm run e2e"
+  },
+  "config": {
+    "transpileblog_out": "src/app/blog/shared/blog-data/generated"
   },
   "private": true,
   "dependencies": {
@@ -48,6 +51,7 @@
     "@types/node": "~6.0.60",
     "codelyzer": "~3.1.1",
     "cross-env": "^5.0.5",
+    "glob": "^7.1.2",
     "html": "^1.0.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
@@ -60,6 +64,7 @@
     "marked": "^0.3.6",
     "nodemon": "^1.11.0",
     "protractor": "~5.1.2",
+    "rimraf": "^2.6.2",
     "tape": "^4.8.0",
     "ts-mockito": "^2.2.2",
     "ts-node": "~3.2.0",

@@ -1,6 +1,6 @@
 # transpiled blog sources
-src/app/blog/blog-data/generated/*
-!src/app/blog/blog-data/generated/folder-info.md
+src/app/blog/shared/blog-data/generated/*
+!src/app/blog/shared/blog-data/generated/folder-info.md
 
 # TravisCI temp files
 travis.log

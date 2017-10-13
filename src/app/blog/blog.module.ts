@@ -1,5 +1,5 @@
+import { SharedModule } from './shared';
 import { BlogRoutingModule } from './blog-routing.module';
-import { BlogDataModule } from './blog-data/blog-data.module';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogEntryComponent } from './blog-entry.component';
 import { NgModule } from '@angular/core';
@@ -10,7 +10,7 @@ import { BlogComponent } from './blog.component';
   imports: [
     CommonModule,
     BlogRoutingModule,
-    BlogDataModule
+    SharedModule
   ],
   declarations: [
     BlogEntryComponent,

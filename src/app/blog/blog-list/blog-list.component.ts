@@ -1,4 +1,4 @@
-import { BlogDataService } from '../blog-data';
+import { BlogService } from '../shared';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
@@ -16,7 +16,7 @@ export class BlogListComponent {
       }));
   }
 
-  constructor(private blogService: BlogDataService) {
+  constructor(private blogService: BlogService) {
   }
 
 }

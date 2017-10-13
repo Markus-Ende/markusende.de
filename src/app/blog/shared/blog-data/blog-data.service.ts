@@ -1,8 +1,9 @@
 import { Injectable, Inject } from '@angular/core';
+import { IBlogDataService } from './blog-data.service.interface';
 import { BLOG_DATA } from './tokens';
 
 @Injectable()
-export class BlogDataService {
+export class BlogDataService implements IBlogDataService {
 
   constructor( @Inject(BLOG_DATA) private blogData: Array<BlogEntryMetadata>) {
   }
