@@ -1,8 +1,6 @@
-# keep all folder-info.md
-!**/folder-info.md
-
 # transpiled blog sources
 src/app/blog/blog-data/generated/*
+!src/app/blog/blog-data/generated/folder-info.md
 
 # TravisCI temp files
 travis.log
