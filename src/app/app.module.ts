@@ -1,22 +1,22 @@
-import { BlogModule } from './blog/blog.module';
+import { AboutmeModule } from './aboutme';
+import { BlogModule } from './blog';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AboutmeComponent } from './aboutme/aboutme.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AboutmeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     BlogModule,
+    AboutmeModule,
     AppRoutingModule
   ],
   providers: [],
