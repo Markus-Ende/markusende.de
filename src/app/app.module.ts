@@ -1,3 +1,4 @@
+import { NavigationModule } from './navigation';
 import { AboutmeModule } from './aboutme';
 import { BlogModule } from './blog';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +18,7 @@ import { AppComponent } from './app.component';
     HttpModule,
     BlogModule,
     AboutmeModule,
+    NavigationModule,
     AppRoutingModule
   ],
   providers: [],
