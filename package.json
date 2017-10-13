@@ -12,7 +12,7 @@
     "test:single": "npm run test-blog-transpile:single && npm run test-app:single",
     "test-app": "ng test",
     "test-app:headless": "cross-env HEADLESS=true npm run test-app",
-    "test-app:single": " && ng test --watch false",
+    "test-app:single": "ng test --watch false",
     "test-blog-transpile": "nodemon --watch src-blog --exec 'tape' src-blog/**/*.spec.js",
     "test-blog-transpile:single": "tape src-blog/**/*.spec.js",
     "lint": "ng lint",
