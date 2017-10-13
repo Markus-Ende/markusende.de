@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { BlogService } from './shared';
+import { BlogService } from '../shared';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 const nullBlogEntryMetadata: BlogEntryMetadata = {

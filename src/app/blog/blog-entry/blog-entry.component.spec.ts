@@ -1,5 +1,5 @@
-import { BlogService } from './shared';
-import { BlogDataComponent } from './shared/blog-data/blog-data.component';
+import { BlogService } from '../shared';
+import { BlogDataComponent } from '../shared/blog-data/blog-data.component';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { convertToParamMap } from '@angular/router';
