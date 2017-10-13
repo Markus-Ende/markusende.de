@@ -8,7 +8,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --prod --aot",
-    "test": "npm run test-blog-transpile:single && npm run test-app",
+    "test": "npm run test-blog-transpile:single && npm run test-app:headless",
     "test:single": "npm run test-blog-transpile:single && npm run test-app:single",
     "test-app": "ng test",
     "test-app:headless": "cross-env HEADLESS=true npm run test-app",
