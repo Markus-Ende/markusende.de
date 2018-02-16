@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { trigger, transition, animate, style, query, stagger, group } from '@angular/animations';
 
 @Component({

@@ -7,20 +7,16 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello/hello.component';
-import { ArtComponent } from './art/art.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ArtComponent,
-    HelloComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ArticlesModule
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

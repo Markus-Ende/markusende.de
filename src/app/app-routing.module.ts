@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HelloComponent } from './hello/hello.component';
+import { HomeModule } from './home/home.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: HelloComponent
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    loadChildren: HomeModule
+  },
+  {
+    path: 'me',
+    loadChildren: 'app/me/me.module#MeModule'
   }
 ];
 
