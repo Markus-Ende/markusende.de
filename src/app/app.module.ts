@@ -1,3 +1,4 @@
+import { ArticlesModule } from './articles/articles.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -18,7 +19,8 @@ import { ArtComponent } from './art/art.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ArticlesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
