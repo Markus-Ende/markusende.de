@@ -1,0 +1,58 @@
+.picture {
+  // min-height: 200px;
+  height: 40%;
+  background-image: url("/assets/me-xs.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.description {
+  margin: 0 11px;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  font-weight: 100;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.legal-link {
+  align-self: flex-end;
+  margin: 11px;
+  text-decoration: none;
+  color: dimgrey;
+  font-weight: 300;
+  font-size: 10px;
+}
+
+:host(.landscape) {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: stretch;
+  overflow: hidden;
+
+  .picture {
+    width: 40%;
+    height: 100%;
+  }
+
+  .main {
+    width: 60%;
+    overflow-y: auto;
+  }
+}
