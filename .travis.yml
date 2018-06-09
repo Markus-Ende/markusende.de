@@ -1,22 +1,17 @@
 addons:
   chrome: stable
-
 language: node_js
-
 script:
   - npm run lint
-  - npm run test:single
-  - npm run e2e
-  - npm run build:prod
-
+  - 'npm run build:prod'
 deploy:
   provider: firebase
   skip_cleanup: true
   on:
     branch: master
   token:
-    secure: kDRolHcUPssZAXz7rSJpAeChxlNlXz6QXXqfZvK9jzLHzfcBfZdJ1e+44xO6wjrPEUBVm5zXVJ8U4bzphwI9nm7uphmcR1Kl0iQbMAb9tIZ0B/dMD2vfxGOoDAIOYktpaLkX0GaISyXoHuCGUjG3H89ecQgisSeGro8TZgTnTC5BwX6fejlMyQKijmo0+wPAuIDmAFWQNKrFko8yBtx12V7F1CPkOihaRQ4WaHciY9/uoXBo/DK8P0EnMh3Or9b/u6Q1FgqIk76MgYLoXFThhTnie0CiwAeQYEn/uTRLwbtxSHdBEAMjhMvyb4KCKav4/iDb36lbgs8BN7UqpqvLcOq5gSAp9JJhAvC83Di9q+CAaDPAyWxlmkxytGSCirEo10fwjC8/m5L1LG63Eyh9YrWXm/BygtBVktXjUlBpF708DmfGSN1UZChZrI2Cr3QFd3YeM8muHKlMk23gQF5AMWgH/IQwDsGYhzfY5dZPFo630hEvlY6x8+ZM6QRVxJg2Sy4uy4J9hADIvW/O8soRdDOUR+bMAuqe9VR3juU4pIM2LYEkGsXWeKWNW9hAEMn+aS9Uwiq1Z9AAwFoxCHfw4kvV58MNggsjwvIjdu/0ZqmK0QNAk49DFkMyUgeOy1EOC1NBCOYq4itOVupuvyv0DaJ4vgrxXAyHsRJT182GPEU=
-
+    secure: >-
+      kDRolHcUPssZAXz7rSJpAeChxlNlXz6QXXqfZvK9jzLHzfcBfZdJ1e+44xO6wjrPEUBVm5zXVJ8U4bzphwI9nm7uphmcR1Kl0iQbMAb9tIZ0B/dMD2vfxGOoDAIOYktpaLkX0GaISyXoHuCGUjG3H89ecQgisSeGro8TZgTnTC5BwX6fejlMyQKijmo0+wPAuIDmAFWQNKrFko8yBtx12V7F1CPkOihaRQ4WaHciY9/uoXBo/DK8P0EnMh3Or9b/u6Q1FgqIk76MgYLoXFThhTnie0CiwAeQYEn/uTRLwbtxSHdBEAMjhMvyb4KCKav4/iDb36lbgs8BN7UqpqvLcOq5gSAp9JJhAvC83Di9q+CAaDPAyWxlmkxytGSCirEo10fwjC8/m5L1LG63Eyh9YrWXm/BygtBVktXjUlBpF708DmfGSN1UZChZrI2Cr3QFd3YeM8muHKlMk23gQF5AMWgH/IQwDsGYhzfY5dZPFo630hEvlY6x8+ZM6QRVxJg2Sy4uy4J9hADIvW/O8soRdDOUR+bMAuqe9VR3juU4pIM2LYEkGsXWeKWNW9hAEMn+aS9Uwiq1Z9AAwFoxCHfw4kvV58MNggsjwvIjdu/0ZqmK0QNAk49DFkMyUgeOy1EOC1NBCOYq4itOVupuvyv0DaJ4vgrxXAyHsRJT182GPEU=
 notifications:
   email:
     on_failure: change
