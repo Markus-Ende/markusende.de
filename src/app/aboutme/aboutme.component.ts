@@ -25,11 +25,4 @@ export class AboutmeComponent implements OnInit {
       ])
       .subscribe(result => (this.isLandscape = result.matches));
   }
-
-  mailto(e: Event) {
-    console.log("mailto:", e);
-    e.srcElement.setAttribute("href", "mailto:blubb");
-    // e.preventDefault();
-    // e.stopPropagation();
-  }
 }
